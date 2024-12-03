@@ -1,0 +1,58 @@
+/* styles.css */
+body {
+    background-color: black;
+    color: green;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    flex-direction: column;
+}
+
+.container {
+    display: inline-block;
+    margin: 0;
+}
+
+.text {
+    font-size: 2em;
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.who-are-we {
+    font-size: 1.5em;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.who-are-we.show {
+    opacity: 1;
+}
+
+.link-container {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.link-container.show {
+    opacity: 1;
+}
+
+a {
+    color: green;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: lime;
+}
