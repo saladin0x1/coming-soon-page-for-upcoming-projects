@@ -1,4 +1,3 @@
-// script.js
 const text = "Coming soon...";
 let index = 0;
 const outputElement = document.getElementById('output');
@@ -15,10 +14,11 @@ function typeText() {
             document.getElementById('who-are-we').classList.add('show');
         }, 500); // Delay for a better effect
 
-        // Show the link after the "Who are we?" text
+        // Show the link and rabbit image after the "Who are we?" text
         setTimeout(function() {
             document.getElementById('link-container').classList.add('show');
-        }, 1500); // Delay to show link after "Who are we?"
+            document.querySelector('.svg-container').classList.add('show');
+        }, 1500); // Delay to show link and image together
     }
 }
 

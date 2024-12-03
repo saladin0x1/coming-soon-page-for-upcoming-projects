@@ -1,8 +1,18 @@
-/* styles.css */
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
 body {
     background-color: black;
     color: green;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace, 'Consolas', 'Lucida Console';
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,21 +20,28 @@ body {
     margin: 0;
     text-align: center;
     flex-direction: column;
+    position: relative; /* Allow for positioning of child elements */
 }
 
+/* Container for content */
 .container {
-    display: inline-block;
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
+/* Typing effect */
 .text {
     font-size: 2em;
     line-height: 1.5;
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
+    margin-right: 15px;
 }
 
+/* "Who are we?" text */
 .who-are-we {
     font-size: 1.5em;
     margin-top: 10px;
@@ -36,6 +53,7 @@ body {
     opacity: 1;
 }
 
+/* Link container */
 .link-container {
     opacity: 0;
     transition: opacity 1s ease-in;
@@ -47,6 +65,7 @@ body {
     opacity: 1;
 }
 
+/* Link styling */
 a {
     color: green;
     text-decoration: none;
@@ -55,4 +74,49 @@ a {
 
 a:hover {
     color: lime;
+}
+
+/* Image container and styling */
+.svg-container {
+    position: absolute; /* Absolute position within body */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease-in;
+    background-color: transparent; /* Make sure the background is transparent */
+    pointer-events: none; /* Prevent the SVG from blocking clicks */
+}
+
+.svg-container.show {
+    opacity: 1; /* Show the image when class 'show' is added */
+}
+
+.svg-container img {
+    width: 150px;
+    height: auto;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .text {
+        font-size: 1.5em;
+    }
+
+    .who-are-we, .link-container {
+        font-size: 1.2em;
+    }
+
+    .svg-container img {
+        width: 120px;
+    }
+
+    .svg-container {
+        /* Adjust positioning on smaller screens to ensure visibility */
+        bottom: 10px;
+        right: 10px;
+        padding: 10px;
+    }
 }
